@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prática JavaScript — Exercícios</title>
+  <style>
+    :root {
+      font-family: Inter, Roboto, Arial, sans-serif;
+      color: #222
+    }
+
+    body {
+      max-width: 980px;
+      margin: 28px auto;
+      padding: 20px;
+      background: #f7f8fb;
+      border-radius: 12px
+    }
+
+    h1,
+    h2 {
+      margin: 0 0 12px
+    }
+
+    section {
+      background: white;
+      padding: 16px;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(20, 20, 60, 0.06);
+      margin-bottom: 16px
+    }
+
+    .row {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    input,
+    button,
+    select,
+    textarea {
+      padding: 8px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      font-size: 14px
+    }
+
+    button {
+      cursor: pointer
+    }
+
+    .output {
+      background: #0f172a;
+      color: #fff;
+      padding: 8px;
+      border-radius: 8px;
+      min-height: 30px
+    }
+
+    ul {
+      margin: 8px 0;
+      padding-left: 20px
+    }
+
+    .hint {
+      font-size: 13px;
+      color: #666
+    }
+
+    .success {
+      color: green;
+      font-weight: 600
+    }
+
+    .danger {
+      color: #b91c1c
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap
+    }
+
+    .small {
+      font-size: 13px;
+      padding: 6px 10px
+    }
+
+    .todo-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 6px 0;
+      border-bottom: 1px dashed #eee
+    }
+
+    #caixa.escuro {
+      /* quando a div tiver a classe "escuro"... */
+      background-color: #333;
+      /* fundo escuro */
+      color: white;
+      /* texto branco */
+      border-color: #111;
+      /* borda mais escura */
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Prática JavaScript — Exercícios interativos</h1>
+
+  <section id="ex1">
+    <h2>1) Lista de amigos (DOM e eventos)</h2>
+    <p class="hint">Ao digitar um nome e clicar em <em>Adicionar</em>, o nome deve ser anexado à lista sem apagar os
+      anteriores. Se o campo estiver vazio, mostre um alerta.</p>
+    <div class="row">
+      <input id="amigoInput" placeholder="Nome do amigo" />
+      <button onclick="amigo()" id="btnAdd">Adicionar</button>
+      <button onclick="limparLista()" id="btnLimpar">Limpar lista</button>
+    </div>
+    <p>Lista:</p>
+    <div id="listaAmigos" class="output"></div>
+  </section>
+
+  <section id="ex2">
+    <h2>2) Contador (estado e atualização de UI)</h2>
+    <div class="row">
+      <button id="dec">-</button>
+      <div id="contador" class="output">0</div>
+      <button id="inc">+</button>
+      <button id="reset">Reset</button>
+    </div>
+    <p class="hint">Implemente increment, decrement (não deixe ir abaixo de 0) e reset.</p>
+  </section>
+
+  <section id="ex3">
+    <h2>3) Alternar tema/estilo (classList)</h2>
+    <p>Ao clicar na caixa, ela deve alternar entre claro/escuro usando classes.</p>
+    <div class="row">
+      <div id="caixa" style="padding:18px;border-radius:8px;border:1px solid #ddd;">Clique em mim</div>
+      <button id="btnToggle">Alternar</button>
+    </div>
+  </section>
+
+  <section id="ex4">
+    <h2>4) Soma de números (formulário e conversão de tipos)</h2>
+    <div class="row">
+      <input id="num1" type="number" placeholder="Número 1" />
+      <input id="num2" type="number" placeholder="Número 2" />
+      <button onclick="botaoSomar()" id="btnSomar">Somar</button>
+    </div>
+    <p>Resultado: <span id="resultado">—</span></p>
+    <p class="hint">Cuidado: elementos input devolvem strings. Converta para Number antes de somar.</p>
+  </section>
+
+  <section id="ex5">
+    <h2>5) Temporizador simples (setInterval / clearInterval)</h2>
+    <div class="row">
+      <div id="timer" class="output">0</div>
+      <div class="controls">
+        <button class="small" id="startTimer">Iniciar</button>
+        <button class="small" id="pauseTimer">Pausar</button>
+        <button class="small" id="resetTimer">Reset</button>
+      </div>
+    </div>
+    <p class="hint">Mostre segundos desde que começou. Pausar deve parar o incremento.</p>
+  </section>
+
+  <section id="ex6">
+    <h2>6) Lista de tarefas simples (arrays + localStorage)</h2>
+    <div class="row">
+      <input id="todoInput" placeholder="Nova tarefa" />
+      <button id="addTodo">Adicionar</button>
+    </div>
+    <div id="todoList"></div>
+    <p class="hint">Armazene as tarefas em um array e salve/recupere de localStorage para persistência.</p>
+  </section>
+
+  <script src="listaDeAmigos1.js"></script>
+  <script src="contador2.js"></script>
+  <script src="alternarTema3.js"></script>
+  <script src="somaDeNumeros4.js"></script>
+  <script src="temporizador5.js"></script>
+  <script src="listaDeTarefas6.js"></script>
+
+</body>
+
+</html>
