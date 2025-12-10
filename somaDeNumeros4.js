@@ -11,4 +11,3 @@ function botaoSomar(){
 
     input1.value = ''
     input2.value = ''
-}
